@@ -1,0 +1,39 @@
+4/16/2024 12:18pm -> Read thought assignment 2 PDF specifications.
+4/16/2024 12:30pm -> Decided to build a terminal based Connect 4 game in C++.
+4/16/2024 12:41pm -> Read thought basic rules of Connect 4.
+4/16/2024 12:44pm -> Initialized a 6 by 7 board with a 2d array.
+4/16/2024 12:58pm -> Created a displayBoard method.
+4/18/2024 3:37pm -> Created a simple Makefile for compiling the code.
+4/18/2024 3:45pm -> Created a main method to execute all the other functions.
+4/18/2024 3:57pm -> Initialized ncurses functions. 
+4/18/2024 4:04pm -> Added a switch case to main for key inputs and a quit case with the 'q' key.
+4/18/2024 4:10pm -> Tested printing the board to the terminal.
+4/18/2024 4:19pm -> Wrote a moveCursor method to move the piece at the top of the board.
+4/18/2024 4:25pm -> Added a KEY_LEFT case and KEY_RIGHT case in main.
+4/18/2024 4:27pm -> added call to moveCursor in main.
+4/18/2024 4:35pm -> Fixed error where the piece wouldn't line up with the columns when moving the piece.
+4/18/2024 4:40pm -> Encountered problem where piece at top of board would lag behind the cursor.
+4/18/2024 4:43pm -> Created a dropPiece method.
+4/18/2024 4:58pm -> Tested dropPiece for functionality.
+4/18/2024 5:04pm -> Added an animation so the pieces falls through every row.
+4/18/2024 5:13pm -> Added functionality to the ENTER key with the dropPiece method.
+4/18/2024 5:18pm -> Added a conditional statement to randomize the starting player.
+4/18/2024 5:22pm -> Created an initializeColors method.
+4/18/2024 5:31pm -> Added color to each piece.
+4/18/2024 5:50pm -> Added to displayBoard so that the current colum the piece was over would be highlighted.
+4/18/2024 6:03pm -> Fixed error where colors were not getting turned off.
+4/20/2024 4:26pm -> Started creating the algorithm to find 4 pieces in a row.
+4/20/2024 4:48pm -> Read thought some connect for algorithms, they seemed to make it overly complex, I decided to create my own.
+4/20/2024 5:07pm -> Started writing the checkWinner method to check all the directions we haven't iterated through yet.
+4/20/2024 5:45pm -> Had to rewrite the method because my logic was wrong.
+4/22/2024 6:08pm -> Created a findLine method to be called recursively with the direction of the line to find a straight.
+4/22/2024 6:29pm -> Added a base case of length 4 to return true in findLine.
+4/22/2024 6:46pm -> Had to rewrite both methods because my logic was wrong.
+4/22/2024 6:54pm -> Added a conditional statement to display text if a player had won.
+4/22/2024 7:00pm -> Tested checkWinner algorithm for logic errors.
+4/23/2024 12:31pm -> Ran into error where dropping a piece on a already full column would switch the players.
+4/23/2024 12:36pm -> Added a columnFull method to prevent this.
+4/23/2024 12:43pm -> Ran into error where nothing would happen if the board was full and no player had won.
+4/23/2024 12:50pm -> Added a boardFull method to check if the board was full and display that there was a draw.
+4/23/2024 12:58pm -> Added directions text to top of terminal.
+4/23/2024 1:10pm -> Tested all functionality.

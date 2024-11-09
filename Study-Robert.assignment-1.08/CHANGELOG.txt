@@ -1,0 +1,182 @@
+2/1/2024 9:02am -> Imported given files from past assignment and started reading project specifications.
+2/1/2024 3:07pm -> Exited makefile to use PuTTY terminal for debugging.
+2/1/2024 3:38pm -> added world_Map, x_pos_cur, and y_pos_cur variables into main method.
+2/1/2024 3:39pm -> added nested for loop to populate world_Map with individual maps into main method.
+2/1/2024 3:47pm -> implemented a world_maps_generate method.
+2/1/2024 3:49pm -> added mart_prob, center_prob, and building_prob_funct variables to decrease the frequency of building spawn the further from origin.
+2/1/2024 3:52pm -> added manhat_dist to calculate building_prob_funct.
+2/1/2024 4:08pm -> added terrain generation to each map section.
+2/1/2024 4:14pm -> wrote a function to place building based off of distance from origin.
+2/1/2024 4:21pm -> move_dir, exit, fly_to_x, and fly_to_y variables in main.
+2/1/2024 4:40pm -> added a UI with text and a scanf function to get directions from the user.
+2/1/2024 6:45pm -> implemented switch case in main to switch between n, s, w, e, f, q.
+2/1/2024 7:29pm -> implemented the n case.
+2/1/2024 7:39pm -> fixed bug where program would exit after one move.
+2/1/2024 7:45pm -> implemented the q case and a default case.
+2/1/2024 8:26pm -> implemented the s case.
+2/1/2024 8:51pm -> fixed bug where maps would remake themselves but only when going north, then back south.
+2/1/2024 9:32pm -> fixed bug where paths would not line up between maps.
+2/1/2024 9:32pm -> fixed bug where traveling to border would crash program.
+2/2/2024 10:49am -> implemented the e and w cases.
+2/2/2024 11:25am -> fixed bug where going south or west from origin would crash program
+2/2/2024 11:43am -> implemented f or fly case.
+2/2/2024 12:15pm -> fixed bug where fly operator would not change the x coordinate.
+2/4/2024 8:05pm -> fixed bug where changing location via fly would give a location off the world.
+2/4/2024 8:13pm -> fixed bug where fly command would remake a pervious maps.
+2/6/2024 6:05pm -> fixed bug where program would crash when traveling e or w at the n or s borders
+
+2/8/2024 5:00pm -> Added "dijkstra_path" and "build_paths" methods from solution drop to my solution from the last assignment.
+2/8/2024 5:10pm -> Added terrain type "ter_character" and method "placeCharacter".
+2/8/2024 5:16pm -> Edited the case switch in printMap so that a @ would be printed where ter_character was assigned.
+2/8/2024 5:20pm -> Added call to placeCharacter method in new_map and world_maps_generate.
+2/8/2024 5:37pm -> Fixed bug where character would not spawn.
+2/8/2024 5:45pm -> Referenced "dijkstra_path" method to make "dijkstra_playerToNpc" method minus The heightpair and edge_penally cost code.
+2/11/2024 11:54am -> Added a 2d array "moveCost" to hold the move costs for the trainers.
+2/11/2024 12:23pm -> Changed populating nested for loop to populate heap based on npcType and moveCost.
+2/11/2024 1:14pm -> Finished adding all cases for surrounding tiles in "dijkstra_playerToNpc".
+2/11/2024 1:19pm -> Fixed gate value in "moveCost" which would give Aborted Core Dump error.
+2/11/2024 1:30pm -> Added "printDistanceMap" method to print hiker and rival distance maps.
+2/11/2024 1:37pm -> Added method calls to "dijkstra_playerToNpc" in main method when the spawn map is created, and after each each map is generated.
+2/11/2024 2:00pm -> Fixed bug where if "5" was printed on the distance map it would mess up spacing, replaced it with "05".
+2/11/2024 2:21pm -> Ran into bug where program would add to INT_MAX, resulting in negative values on distance map and ruin spacing.
+2/12/2024 1:06pm -> Fixed bug by catching overflow or negative values and replacing them with spaces.
+2/12/2024 1:31pm -> Ran into bug where my last bug fix would sometimes print out blank distance maps or just crash the program.
+2/13/2024 2:04pm -> Fixed bug by creating new "infinity" called SHORT_MAX and used it instead of INT_MAX, unreachable spaces now print out as blank on the distance map.
+
+2/21/2024 5:39pm -> Started reading through PDF for assignment 1.04
+2/21/2024 5:46pm -> After looking at the solution drop for assignment 1.03, I realized my path making method could only make 1 path at a time.
+2/21/2024 6:01pm -> Added char_pacer, char_wanderer, char_sentry, and char_explorer to "character_type".
+2/21/2024 6:02pm -> Added terrain all cost values from 1.03 PDF into "move_cost" for the new characters.
+2/22/2024 6:31pm -> Added a npc and character structure, the character structure also now holds fields for pc.
+2/22/2024 6:43pm -> Added characterMap field to the map structure. to hold character separate from the terrain map.
+2/22/2024 6:50pm -> Started added a initialization loop for characterMap and a heap initialization to the new_map method.
+2/22/2024 6:58pm -> implemented a character_cmp method which works exactly like the given path_cmp method.
+2/22/2024 7:07pm -> implemented a delete_character method to de-allocate a character from the heap.
+2/22/2024 7:20pm -> Finished added a initialization loop for characterMap and a heap initialization to the new_map method.
+2/22/2024 7:29pm -> Added initializations of pc and inserting pc into the heap in the init_pc method.
+2/22/2024 7:48pm -> Added a conditional statement into main to count "--numtrainers".
+2/22/2024 7:50pm -> Commented out any unnecessary code for this assignment in main method.
+2/23/2024 11:54am -> Created a generateTrainers method to calculate how many and what type of trainers should be placed based on --numtrainers.
+2/23/2024 12:29pm -> Created a spawnTrainers method which switches between character types bases on the char passed in, then initializes the fields for that char and inserts it into the heap and characterMap.
+2/23/2024 12:52pm -> Added a switch case for pacers, wanderers and explorers to pick a random starting direction.
+2/23/2024 1:10pm -> Added generateTrainers and spawnTrainers method calls into main.
+2/23/2024 1:22pm -> Fixed core dump error becauseI forgot to allocate memory for the character.
+2/23/2024 1:40pm -> Fixed bug where trainers would not spawn and map would randomly place path terrains.
+2/23/2024 1:51pm -> Added trainer_turns field to the map structure to keep track of what trainers turn it is to move.
+2/23/2024 1:57pm -> Added a pair_t next to the npc structure to hold the location of the next move for a trainer.
+2/23/2024 2:00pm -> Added a next_turn to the character structure to hold when the character's next turn is.
+2/23/2024 2:20pm -> Fixed bug where trainers were added to wrong map, making it bigger than [21][81].
+2/24/2024 5:45pm -> Fixed bug each new map was the same, seed wasn't changing.
+2/24/2024 6:01pm -> Created a moveTrainers method which moves all the characters based in their assigned paths and movement specifications.
+2/24/2024 8:20pm -> Added moveTrainer method call into main.
+2/24/2024 8:41pm -> Fixed error where I tried to copy one array into another and the terminal printed out "PuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTYPuTTY".
+2/24/2024 9:00pm -> Inserted the moved character into characterMap and heap in moveTrainer method to update the printed map.
+2/24/2024 9:10pm -> Fixed bug where characters were not getting added to the heap.
+2/24/2024 9:23pm -> Fixed bug where pacer would could change direction.
+2/24/2024 9:31pm -> Added an infinite while loop with print_map, moveTrainers, and usleep() to continuously print updated maps with character movement.
+
+
+3/2/2024 10:15pm -> Started reading thought assignment 1.05 PDF.
+3/2/2024 10:23pm -> Imported assignment 1.04 solution drop.
+3/2/2024 10:28pm -> Added curses and ncruses library headers.
+3/2/2024 10:32pm -> Commented out game_loop and replaced it with print_map to begin to implement text colors
+3/2/2024 10:43pm -> Fixed bug where Makefile wouldn't configure because of missing -lncurses tag
+3/19/2024 7:20pm -> Added an init_terminal() method to initializes the curses library, hide the characters inputed by the user, and enable keyboard inputs.
+3/19/2024 7:51pm -> Initialized color pairs in init_terminal() for each terrain type.
+3/19/2024 8:14pm -> Edited the print_map() method to change the color of each terrain type and switch it back to default after.
+3/19/2024 8:31pm -> Edited the game_loop() method to add a while(quit == 0) loop and quit variable.
+3/19/2024 8:43pm -> Added a switch case loop the while(quit == 0) loop to read the input character and switch between the different cases for each key.
+3/19/2024 8:50pm -> Added quit functionality to the 'q' case.
+3/19/2024 8:55pm -> Ran into bug where ncruses would still be effecting the terminal after the program was exited.
+3/19/2024 9:15pm -> Fixed bug by adding the endwin() function call to the main method to restore the terminal after curses.
+3/20/2024 3:45pm -> Added placeholder top line in terminal for message displaying and 2 line in the bottom for future use.
+3/20/2024 3:52pm -> Added a trainerList() method to be called by when the 't' key is hit to hold a list of trainers and their positions.
+3/20/2024 3:58pm -> Added a trainerList() to 't' case in game_loop.
+3/20/2024 4:26pm -> Added scroll keys to trainer list method.
+3/20/2024 4:49pm -> Added centerInterface, martInterface, battleInterface methods as placeholders for future functionality.
+3/20/2024 4:58pm -> Declared those three function at the top of the program.
+3/20/2024 5:50pm -> Added movement functionality for all the movement cases.
+3/20/2024 6:19pm -> Fixed core dump error when new_x and new_y positions were indexing wrong.
+3/20/2024 6:31pm -> Added functionality to the "rest turn" case where NPCs can still move.
+3/20/2024 8:15pm -> Fixed error where program would get stuck in loop with no way to exit.
+3/20/2024 8:48pm -> Added functionality to the right key to enter the pokemarts or pokecenters.
+3/20/2024 9:14pm -> Fixed error where the "rest turn" case would always call the the battle interface and then get suck in a loop.
+
+3/22/2024 7:14pm -> Started reading thought assignment 1.06 PDF.
+3/22/2024 7:21pm -> Decided to use my solution to assignment 1.05 as a base because I understand it more then the solution drop.
+3/22/2024 7:32pm -> Changed link line to link with the C++ compiler in Makefile.
+3/22/2024 7:45pm -> Used errors in terminal to find where I needed to add casts.
+3/22/2024 8:09pm -> Added casts in all the new_"trainer" methods.
+3/22/2024 8:31pm -> Added casts in dijkstra_path and pathfind methods.
+3/22/2024 8:42pm -> Added casts in smooth_height.
+3/22/2024 8:55pm -> Added casts in map_terrain.
+3/22/2024 8:59pm -> Still errors because I missed the (terrain_type_t)i casts in map_terrain.
+3/22/2024 9:01pm -> Got my solution to 1.05 to compile and run in C++.
+3/23/2024 2:05pm -> Added a 'f' case to fly similar to assignment 1.02.
+3/23/2024 2:14pm -> Created a moveMaps variable in game_loop to check if pc moved between maps.
+3/23/2024 2:29pm -> Created locatePaths method to find path tile to place pc.
+3/23/2024 2:43pm -> Fixed core dump error when using fly.
+3/23/2024 2:46pm -> Added a errorInterface method that appears when you input invalid map coordinates.
+3/23/2024 3:51pm -> Added map movement mechanics to each movement case.
+3/23/2024 3:55pm -> Changed cost value of gate for pc so gates were accessible.
+3/23/2024 4:27pm -> Fixed bug where maps would not change and pc would just move to the opposite side of the map.
+3/23/2024 5:01pm -> Ran into bug where init_pc would place another pc when moving to a new map.
+3/24/2024 11:54pm -> Added a is_pc_inserted checking variable in the world struct(class).
+3/24/2024 2:10pm -> Added conditions to check if pc was already initialized in the world in new_map method.
+3/24/2024 2:18pm -> Fixed error where going on a gate tile would cause a core dump.
+3/24/2024 2:24pm -> Ran into error where some movement mechanics which weren't moving the pc as they were supposed to.
+3/24/2024 3:39pm -> Fixed these movement mechanics.
+3/24/2024 7:11pm -> Ran into some weird errors where terminal would freeze.
+3/24/2024 7:25pm -> Ran into errors where makefile wouldn't update to the most recent saved C++ file (I think my vpn was also being weird).
+3/24/2024 8:01pm -> Got all movement mechanics working and pc can move between maps.
+3/24/2024 10:48pm -> Converted all structs to classes with public visibility.
+3/24/2024 11:08pm -> Fix some syntax errors causing the structs to not compile (I missed a ;).
+3/24/2024 11:10pm -> Got code to compile and run all with structs in C++.
+
+3/31/2024 2:36pm -> Started reading thought assignment 1.07 PDF.
+3/31/2024 2:40pm -> Imported 1.07 solution drop as a base for this assignment.
+3/31/2024 2:50pm -> Located the 9 csv files in share/cs327/pokedex/pokedex/data/csv/ that need to get parsed, I did not download them into my project.
+3/31/2024 2:54pm -> Created 2 new files: fileparse.h and fileparse.cpp
+3/31/2024 2:54pm -> Added classes for each csv file in fileparse.h, getting the parameters for each class by looking at the parameters in the csv file.
+3/31/2024 3:32pm -> Added function definitions for all the parsing methods I intend to write.
+3/31/2024 3:42pm -> Added class definitions to fileparse.cpp and method stubs.
+3/31/2024 4:00pm -> Added a simple input output conditional loop to main to print the contents of which file the user wants parsed.
+3/31/2024 4:26pm -> Fixed file pathing code for each csv file method.
+3/31/2024 4:49pm -> Fixed linking error between poke327.cpp and files.h.
+3/31/2024 5:22pm -> Fixed linking error where fileparser.o wasn't included in makefile.
+3/31/2024 6:44pm -> Started coding the parse_pokemon method.
+3/31/2024 7:20pm -> Ran into some weird Makefile bug where the code wouldn't compile, an empty bin folder was created and I fixed it by making a new folder.
+3/31/2024 7:47pm -> Fixed bug where parsing in parse_pokemon was giving some strange large numbers.
+3/31/2024 8:00pm -> Finally got the parse_pokemon method working.
+3/31/2024 9:10pm -> Finished parse_moves, parse_pokemon_moves, and parse_pokemon_species methods by copying most of the functionality from the parse_pokemon method.
+3/31/2024 10:18pm -> Fixed bug where invalid input statement in main wouldn't print.
+3/31/2024 10:40pm -> Finished parse_experience, parse_name_types, and parse_pokemon_stats methods.
+3/31/2024 10:58pm -> Fixed bug in parse_stats where id would alwasys be 0.
+3/31/2024 11:15pm -> Finished parse_stats and parse_pokemon_types methods.
+
+4/7/2024 6:02pm -> Imported solution drop from Assignment 1.07.
+4/7/2024 6:12pm -> Started reading thought 1.08 PDF. 
+4/7/2024 6:29pm -> Created a new file called pokemon_class.h and added a class to hold the data/attributes for each pokemon.
+4/7/2024 6:57pm -> Encountered a Makefile error because I created a subdirectory in my assignment 8 folder.
+4/7/2024 7:11pm -> Fix early return in main causing program to terminate early.
+4/8/2024 11:15am -> Added a conditional statement in io.cpp so when a player enters the tall grass terrain, there is a 10% chance a pokemon encounter will occur.
+4/8/2024 11:23am -> Added a pokemon_encounter method which will print out the stats for encountered pokemon.
+4/8/2024 11:35am -> Added code in pokemon_encounter to clear space for encounter output.
+4/8/2024 11:39am -> Fixed bug where db_parse.h wasn't called in io.cpp.
+4/8/2024 12:02pm -> Fixed bug where pokemon_encounter would never get called while walking through tall grass.
+4/8/2024 12:09pm -> created method stubs get_level, get_hp, get_otherstat, get_shiny, get_gender, and get_moves to get the attributes for each pokemon.
+4/8/2024 12:24pm -> Finished get_level method.
+4/8/2024 12:32pm -> Finished get_hp method.
+4/8/2024 12:47pm -> Finished get_otherstat method.
+4/8/2024 12:50pm -> Finished get_shiny method.
+4/8/2024 12:52pm -> Finished get_gender method.
+4/8/2024 1:29pm -> Finished get_moves method.
+4/8/2024 3:07pm -> Finished pokemon_encounter method using calls to the 6 methods I just implemented.
+4/8/2024 3:18pm -> Added pokemon_class to attribute to class pc to hold the players current pokemon.
+4/8/2024 3:25pm -> Created give_new_pokemon method stub.
+4/8/2024 3:28pm -> Added method call to give_new_pokemon in init_pc.
+4/8/2024 3:49pm -> Created createPokemon method create pokemon the player can chose between.
+4/8/2024 4:18pm -> Finished give_new_pokemon method to initialize the player with a starting pokemon.
+4/8/2024 4:22pm -> Fixed bug where createPokemon and give_new_pokemon were not defined in io.h.
+4/8/2024 4:46pm -> Fixed core dump error.
+4/8/2024 5:00pm -> Fixed bug where give_new_pokemon wasn't getting called after I tried to simplify some code.
