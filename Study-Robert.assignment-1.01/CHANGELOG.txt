@@ -1,0 +1,12 @@
+1/23/2024 4:15pm -> Started assignment 1.01
+1/23/2024 4:31pm -> Created printMap and main method.
+1/23/2024 4:45pm -> created generateBorder method
+1/23/2024 5:05pm -> created generateRoads method
+1/23/2024 5:55pm -> Fixed bug where exits would spawn in corners
+1/23/2024 6:04pm -> Fixed bug where paths would spawn along edges
+1/23/2024 6:29pm -> Created generateTerrain method
+1/23/2024 6:50pm -> Tested generateTerrain to find values I liked for world generation
+1/23/2024 7:01pm -> Created generateBuildings method
+1/23/2024 7:27pm -> Fixed bug where building would spawn over the path sometimes
+1/23/2024 7:31pm -> Ran into problems where I could only generate one building
+1/23/2024 7:42pm -> Split generateBuildings method into generateCenter and generateMart methods

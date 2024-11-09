@@ -1,0 +1,26 @@
+2/1/2024 9:02am -> Imported given files from past assignment and started reading project specifications.
+2/1/2024 3:07pm -> Exited makefile to use PuTTY terminal for debugging.
+2/1/2024 3:38pm -> added world_Map, x_pos_cur, and y_pos_cur variables into main method.
+2/1/2024 3:39pm -> added nested for loop to populate world_Map with individual maps into main method.
+2/1/2024 3:47pm -> implemented a world_maps_generate method.
+2/1/2024 3:49pm -> added mart_prob, center_prob, and building_prob_funct variables to decrease the frequency of building spawn the further from origin.
+2/1/2024 3:52pm -> added manhat_dist to calculate building_prob_funct.
+2/1/2024 4:08pm -> added terrain generation to each map section.
+2/1/2024 4:14pm -> wrote a function to place building based off of distance from origin.
+2/1/2024 4:21pm -> move_dir, exit, fly_to_x, and fly_to_y variables in main.
+2/1/2024 4:40pm -> added a UI with text and a scanf function to get directions from the user.
+2/1/2024 6:45pm -> implemented switch case in main to switch between n, s, w, e, f, q.
+2/1/2024 7:29pm -> implemented the n case.
+2/1/2024 7:39pm -> fixed bug where program would exit after one move.
+2/1/2024 7:45pm -> implemented the q case and a default case.
+2/1/2024 8:26pm -> implemented the s case.
+2/1/2024 8:51pm -> fixed bug where maps would remake themselves but only when going north, then back south.
+2/1/2024 9:32pm -> fixed bug where paths would not line up between maps.
+2/1/2024 9:32pm -> fixed bug where traveling to border would crash program.
+2/2/2024 10:49am -> implemented the e and w cases.
+2/2/2024 11:25am -> fixed bug where going south or west from origin would crash program
+2/2/2024 11:43am -> implemented f or fly case.
+2/2/2024 12:15pm -> fixed bug where fly operator would not change the x coordinate.
+2/4/2024 8:05pm -> fixed bug where changing location via fly would give a location off the world.
+2/4/2024 8:13pm -> fixed bug where fly command would remake a pervious maps.
+2/6/2024 6:05pm -> fixed bug where program would crash when traveling e or w at the n or s borders
